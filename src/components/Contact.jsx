@@ -27,13 +27,18 @@ const Contact = () => {
     setLoading(true);
 
     emailjs
-      .send({
-        from_name: form.name,
-        to_name: "Sean",
-        from_email: form.email,
-        to_email: "sean.humphreys808@gmail.com",
-        message: form.message,
-      })
+      .send(
+        "service_yywc37b",
+        "template_ncglorj",
+        {
+          from_name: form.name,
+          to_name: "Sean",
+          from_email: form.email,
+          to_email: "sean.humphreys808@gmail.com",
+          message: form.message,
+        },
+        "34-FBl6DICfX6Vd7n"
+      )
       .then(
         () => {
           setLoading(false);
