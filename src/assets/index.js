@@ -9,7 +9,6 @@ import close from "./close.svg";
 
 import html from "./tech/html.png";
 import css from "./tech/css.png";
-import bootstrap from "./tech/bootstrap.png";
 import jquery from "./tech/jquery.png";
 import javascript from "./tech/javascript.png";
 import reactjs from "./tech/reactjs.png";
@@ -21,7 +20,6 @@ import typescript from "./tech/typescript.png";
 import tailwind from "./tech/tailwind.png";
 import nextjs from "./tech/nextjs.png";
 import java from "./tech/java.png";
-import python from "./tech/python.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -43,7 +41,6 @@ export {
   close,
   html,
   css,
-  bootstrap,
   jquery,
   javascript,
   reactjs,
@@ -55,7 +52,6 @@ export {
   tailwind,
   nextjs,
   java,
-  python,
   meta,
   shopify,
   starbucks,

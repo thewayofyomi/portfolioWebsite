@@ -5,7 +5,6 @@ import {
   web,
   html,
   css,
-  bootstrap,
   jquery,
   javascript,
   reactjs,
@@ -17,7 +16,6 @@ import {
   tailwind,
   nextjs,
   java,
-  python,
   meta,
   starbucks,
   tesla,
@@ -71,10 +69,6 @@ const technologies = [
     icon: css,
   },
   {
-    name: "Bootstrap",
-    icon: bootstrap,
-  },
-  {
     name: "jQuery",
     icon: jquery,
   },
@@ -117,10 +111,6 @@ const technologies = [
   {
     name: "Java",
     icon: java,
-  },
-  {
-    name: "Python",
-    icon: python,
   },
 ];
 
