@@ -21,10 +21,8 @@ import tailwind from "./tech/tailwind.png";
 import nextjs from "./tech/nextjs.png";
 import java from "./tech/java.png";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import yellowbrick from "./company/yellowbrick.png";
+import islandvariety from "./company/islandvariety.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -52,10 +50,8 @@ export {
   tailwind,
   nextjs,
   java,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  yellowbrick,
+  islandvariety,
   carrent,
   jobit,
   tripguide,
