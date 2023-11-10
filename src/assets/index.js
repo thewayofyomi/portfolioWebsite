@@ -7,19 +7,21 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
 import html from "./tech/html.png";
+import css from "./tech/css.png";
+import bootstrap from "./tech/bootstrap.png";
+import jquery from "./tech/jquery.png";
 import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
+import csharp from "./tech/csharp.png";
+import dotnet from "./tech/dotnet.png";
+import sql from "./tech/sql.png";
+import git from "./tech/git.png";
 import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
+import tailwind from "./tech/tailwind.png";
+import nextjs from "./tech/nextjs.png";
+import java from "./tech/java.png";
+import python from "./tech/python.png";
 
 import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
@@ -39,19 +41,21 @@ export {
   github,
   menu,
   close,
-  css,
-  docker,
-  figma,
-  git,
   html,
+  css,
+  bootstrap,
+  jquery,
   javascript,
-  mongodb,
-  nodejs,
   reactjs,
-  redux,
-  tailwind,
+  csharp,
+  dotnet,
+  sql,
+  git,
   typescript,
-  threejs,
+  tailwind,
+  nextjs,
+  java,
+  python,
   meta,
   shopify,
   starbucks,
