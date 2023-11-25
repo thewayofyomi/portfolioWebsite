@@ -1,28 +1,35 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
-import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+  const { scene } = useGLTF("./desktop_pc/scene.gltf");
+
+  const scaleFactor = 4.2;
+  const scale = isMobile
+    ? [0.4 * scaleFactor, 0.4 * scaleFactor, 0.4 * scaleFactor]
+    : [1 * scaleFactor, 1 * scaleFactor, 1 * scaleFactor];
+
+  // Adjust the yOffset for mobile view to move the model 20% down
+  const yOffset = isMobile ? -0.2 : 0.2; // Adjust as needed
 
   return (
     <group>
-      <hemisphereLight intensity={3} groundColor="black" />
+      <hemisphereLight intensity={0.5} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
-        angle={0.12}
+        angle={0.16}
         penumbra={1}
-        intensity={2}
-        shadow-mapSize={1024}
+        intensity={1}
         castShadow
+        shadow-mapSize={1024}
       />
-      <pointLight intensity={2} />
+      <pointLight intensity={1} />
       <primitive
-        object={computer.scene}
-        scale={isMobile ? 0.65 : 0.65}
-        position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        object={scene}
+        scale={scale}
+        position={[0, yOffset, -2.2]}
+        rotation={[0.9, 0, 0]}
       />
     </group>
   );
@@ -32,14 +39,12 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
-
-    setIsMobile(mediaQuery.matches);
-
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mediaQuery.matches);
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
     return () => {
@@ -50,19 +55,17 @@ const ComputersCanvas = () => {
   return (
     <Canvas
       frameloop="demand"
-      dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ preserveDrawingBuffer: true }}
       shadows
+      dpr={[1, 2]}
+      camera={{ position: [0, 6, 5], fov: 15 }}
     >
-      <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          minPolarAngle={Math.PI / 2}
-          maxPolarAngle={Math.PI / 2}
-        />
-        <Computers isMobile={isMobile} />
-      </Suspense>
+      <OrbitControls
+        enableZoom={false}
+        rotateSpeed={0.4} // Adjust the rotateSpeed as needed
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+      />
+      <Computers isMobile={isMobile} />
       <Preload all />
     </Canvas>
   );
